@@ -93,9 +93,11 @@ end)
 local Sidebar = Instance.new("ScrollingFrame")
 Sidebar.Size = UDim2.new(0, 150, 1, -36)
 Sidebar.Position = UDim2.new(0, 0, 0, 36)
-Sidebar.BackgroundTransparency = 1
+Sidebar.BackgroundTransparency = 0.95
+Sidebar.BackgroundColor3 = Color3.fromRGB(30, 30, 45)
 Sidebar.ScrollBarThickness = 3
 Sidebar.Visible = true
+Sidebar.ZIndex = 2
 Sidebar.Parent = MainFrame
 
 local SidebarList = Instance.new("UIListLayout")
@@ -109,7 +111,9 @@ Sidebar.CanvasSize = UDim2.new(0, 0, 0, SidebarList.AbsoluteContentSize.Y + 20)
 local Content = Instance.new("Frame")
 Content.Size = UDim2.new(1, -160, 1, -44)
 Content.Position = UDim2.new(0, 150, 0, 40)
-Content.BackgroundTransparency = 1
+Content.BackgroundTransparency = 0.95
+Content.BackgroundColor3 = Color3.fromRGB(25, 25, 35)
+Content.ZIndex = 1
 Content.Parent = MainFrame
 
 local ContentList = Instance.new("UIListLayout")
@@ -270,7 +274,6 @@ local function CreateTab(name)
             UpdateToggle(not value)
         end)
         
-        -- Apply initial state properly
         if value then
             UpdateToggle(true)
         else
