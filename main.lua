@@ -274,6 +274,7 @@ local function CreateTab(name)
             UpdateToggle(not value)
         end)
         
+        -- Apply initial state properly
         if value then
             UpdateToggle(true)
         else
